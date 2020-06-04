@@ -217,7 +217,7 @@ module ahb_master(hbusreq_o,
         else if (main_fsm_r == S1 & (fsm_rd_rd || fsm_rd_lrd) & hready_i)
             rd_data_r <= hrdata_i;
     
-    assign  hwdata_o = (main_fsm_r == S2 & (fsm_wr_wd || fsm_wr_lwd) & hready_i) ? rd_data_r[wr_cnt_r] : 32'b0;
+    assign  hwdata_o = (main_fsm_r == S2 & (fsm_wr_wd || fsm_wr_lwd) & hready_i) ? rd_data_r[wr_cnt_r] : 128'b0;
     assign  haddr_o  = haddr_r;
     
 endmodule
